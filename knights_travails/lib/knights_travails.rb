@@ -1,5 +1,5 @@
 # create nodes for tree-search
-class Chess_Node
+class ChessNode
   attr_accessor :position, :possible_moves, :parent
 
   def initialize(position, parent = nil)
@@ -21,7 +21,7 @@ class Chess_Node
 
   def self.knight_move(initial_position, final_position)
     visited = Set.new([initial_position])
-    queue = [Chess_Node.new(initial_position)]
+    queue = [ChessNode.new(initial_position)]
     until queue.empty?
       current_node = queue.shift
       return construct_path(current_node) if current_node.position == final_position
@@ -29,7 +29,7 @@ class Chess_Node
       current_node.possible_moves.each do |move|
         next if visited.include?(move)
 
-        child_node = Chess_Node.new(move, current_node)
+        child_node = ChessNode.new(move, current_node)
         queue.push(child_node)
         visited.add(move)
       end
@@ -46,4 +46,4 @@ class Chess_Node
   end
 end
 
-Chess_Node.knight_move([4, 3], [0, 7])
+ChessNode.knight_move([4, 3], [0, 7])
