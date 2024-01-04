@@ -1,4 +1,4 @@
-def caesar_cipher(str,shift_factor)
+def caesar_cipher(str, shift_factor)
     cipher = str.bytes.map do |byte|
         if byte.chr.match(/[a-zA-Z]/)
         shift = byte + shift_factor
@@ -16,7 +16,6 @@ def caesar_cipher(str,shift_factor)
     cipher.join("")
 end
 
-puts caesar_cipher("Hello, Wolrd!",4) #output: Lipps, Aspvh!
-puts caesar_cipher("I really want eat pizza", 8) #output: Q zmittg eivb mib xqhhi
-puts caesar_cipher("I am negative",-5) #output: D vh izbvodqz
-
+# puts caesar_cipher("Hello, Wolrd!",4) #output: Lipps, Aspvh!
+# puts caesar_cipher("I really want eat pizza", 8) #output: Q zmittg eivb mib xqhhi
+# puts caesar_cipher("I am negative",-5) #output: D vh izbvodqz
