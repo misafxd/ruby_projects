@@ -76,7 +76,7 @@ class Player
   end
 end
 
-class Game 
+class Game
   attr_accessor :board, :player1, :player2
 
   def initialize
@@ -124,7 +124,7 @@ class Game
     end
   end
 end
-new_game = Game.new
-new_game.instructions
-new_game.board.display
-new_game.play
+# new_game = Game.new
+# new_game.instructions
+# new_game.board.display
+# new_game.play
